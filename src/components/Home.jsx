@@ -16,7 +16,12 @@ const Home = () => {
 
   const handlerMarkAsRead = (data) => {
     if (bookmarks) {
-      setBookmarks([...bookmarks, data]);
+      const isExist = bookmarks.find((bookm) => bookm.id === data.id);
+      if (isExist) {
+        return alert("data already added");
+      } else {
+        setBookmarks([...bookmarks, data]);
+      }
     } else {
       setBookmarks([data]);
     }
