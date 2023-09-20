@@ -62,14 +62,16 @@ const Home = () => {
         ))}
       </div>
       <div className="knowledge-right">
-        <div className="spent-time">Spent time on read : {spentTime}min</div>
-        <div className="bookmark-lists">
-          <div className="bookmark-title">
-            Bookmarked Blogs : {bookmarks.length}
+        <div className="sticky">
+          <div className="spent-time">Spent time on read : {spentTime}min</div>
+          <div className="bookmark-lists">
+            <div className="bookmark-title">
+              Bookmarked Blogs : {bookmarks.length}
+            </div>
+            {bookmarks.map((bookmark) => (
+              <Bookmark bookmark={bookmark} key={bookmark.id} />
+            ))}
           </div>
-          {bookmarks.map((bookmark) => (
-            <Bookmark bookmark={bookmark} key={bookmark.id} />
-          ))}
         </div>
       </div>
     </div>
