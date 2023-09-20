@@ -1,0 +1,54 @@
+{
+  "knowledge_cafe_entries": [
+    {
+      "id": 1,
+      "property_image": "https://images.pexels.com/photos/4974914/pexels-photo-4974914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "user_image": "https://randomuser.me/api/portraits/men/67.jpg",
+      "user_name": "John Doe",
+      "user_title": "Senior Researcher",
+      "heading_title": "The Future of Artificial Intelligence",
+      "tags": ["AI", "Machine Learning", "Technology"],
+      "read_time": 10
+    },
+    {
+      "id": 2,
+      "property_image": "https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "user_image": "https://randomuser.me/api/portraits/men/9.jpg",
+      "user_name": "Alice Smith",
+      "user_title": "Data Scientist",
+      "heading_title": "Exploring Data Visualization Techniques",
+      "tags": ["Data Visualization", "Data Analysis", "Charts"],
+      "read_time": 8
+    },
+    {
+      "id": 3,
+      "property_image": "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "user_image": "https://randomuser.me/api/portraits/men/1.jpg",
+      "user_name": "Emma Johnson",
+      "user_title": "Product Manager",
+      "heading_title": "Innovations in Mobile App Development",
+      "tags": ["Mobile Apps", "App Development", "Innovation"],
+      "read_time": 12
+    },
+    {
+      "id": 4,
+      "property_image": "https://images.pexels.com/photos/5240544/pexels-photo-5240544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "user_image": "https://randomuser.me/api/portraits/men/1.jpg",
+      "user_name": "Michael Brown",
+      "user_title": "Blockchain Specialist",
+      "heading_title": "The Impact of Blockchain on Finance",
+      "tags": ["Blockchain", "Finance", "Cryptocurrency"],
+      "read_time": 15
+    },
+    {
+      "id": 5,
+      "property_image": "https://images.pexels.com/photos/360591/pexels-photo-360591.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "user_image": "https://randomuser.me/api/portraits/men/1.jpg",
+      "user_name": "Sophia Davis",
+      "user_title": "UX Designer",
+      "heading_title": "User-Centered Design Principles",
+      "tags": ["UX Design", "User-Centered Design", "Usability"],
+      "read_time": 7
+    }
+  ]
+}
