@@ -1,142 +1,133 @@
-/* font */
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
-body {
-  font-family: "Lato", sans-serif;
+.home {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 1rem;
+  min-height: 100vh;
+  background-color: #816df010;
 }
-.container {
-  margin: 0 5rem;
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.11);
+.left-side {
+  padding: 3rem 4rem;
 }
 .logo {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: bolder;
+  color: #816df0;
 }
-.user-img {
-  width: 40px;
-  overflow: hidden;
-  height: 40px;
+.title {
+  padding: 0.5rem 0;
 }
-.user-img img {
-  width: 100%;
-  object-fit: cover;
+.ecercises {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
 }
-.sticky {
-  position: sticky;
-  top: 3rem;
-}
-.knowledge-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.knowledge-cafe-cart {
-  width: 700px;
-  padding: 0 1rem;
-  margin-bottom: 3rem;
+.single-exercise-cart {
+  width: 16rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.8rem;
 }
-.cart-image {
+.image {
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+.image img {
+  width: 100%;
+  height: 8rem;
+  object-fit: cover;
+}
+.exercise-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cart-title {
+  font-weight: bolder;
+}
+.cart-des {
+  color: gray;
+}
+.add-list-btn {
+  background-color: #816df0;
+  color: white;
+  border: 0;
+  padding: 0.6rem;
   border-radius: 0.5rem;
-  overflow: hidden;
-  width: 100%;
-  height: 70vh;
 }
-.cart-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.activity-completed {
+  background-color: #816df0;
+  color: white;
+  border: 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
 }
-.cart-desc {
+.right-side {
+  background-color: white;
+}
+.user {
+  margin: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2.5rem;
+  position: sticky;
+  top: 1rem;
 }
 .user-info {
   display: flex;
-  justify-content: space-between;
+  gap: 0.8rem;
   align-items: center;
 }
-.user {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+.user-info h4 {
+  font-weight: bolder;
+}
+.user-info small,
+.gray {
+  color: gray;
 }
 .user-img {
   width: 2.5rem;
   border-radius: 50%;
+  overflow: hidden;
+  height: 2.5rem;
 }
 .user-img img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
+  height: 100%;
 }
-.read-more {
+.add-break-items {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
+  background-color: #816df010;
+  padding: 1rem 5px;
+  border-radius: 0.8rem;
 }
-.knowldge-details {
+.item {
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.3rem;
+}
+.excrcise-details-area {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.tags {
+.excrcise-details,
+.break-details {
   display: flex;
-  gap: 0.3rem;
-  color: gray;
-}
-.mark-read-btn {
-  padding: 10px 0;
-}
-.mark-read-btn button {
-  background-color: transparent;
-  color: #6047ec;
-  text-decoration: underline;
-  border: 0;
-}
-.spent-time {
-  color: #6047ec;
-  border: 1px solid #6047ec;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background-color: #6047ec13;
-  text-align: center;
-  font-weight: 600;
-}
-.bookmark-lists {
-  padding: 1rem;
-  background-color: #11111110;
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-}
-.bookmark-title {
-  font-weight: 700;
-}
-.bookmark-item {
-  background-color: white;
-  padding: 0.5rem;
-  font-weight: 600;
-  margin: 0.5rem;
-  font-size: 0.9rem;
-  border-radius: 0.5rem;
-  list-style: none;
-}
-.bookmark-icon {
-  color: #6047ec;
+  justify-content: space-between;
+  font-weight: bold;
+  background-color: #816df010;
+  padding: 1rem 5px;
 }
