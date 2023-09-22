@@ -1,5 +1,18 @@
+import { useState } from "react";
+
 const Exercise = ({ exercise, handlerAddToList }) => {
+  const [isAdded, setIsAdded] = useState(false);
+
   const { image, title, description, age, time_required } = exercise;
+
+  const handleAddToListClick = () => {
+    handlerAddToList(exercise);
+    setIsAdded(!isAdded); // Toggle the isAdded state
+  };
+
+  const buttonText = isAdded ? "added" : "  Add to list";
+  const buttonColor = isAdded ? "added-color" : "add-list-btn";
+
   return (
     <div className="single-exercise-cart">
       <div className="image">
@@ -11,12 +24,11 @@ const Exercise = ({ exercise, handlerAddToList }) => {
         <p>For age: {age}</p>
         <p>Time required: {time_required}</p>
       </div>
-      <button
-        className="add-list-btn"
-        onClick={() => handlerAddToList(exercise)}
-      >
-        Add to list
-      </button>
+      <div>
+        <button className={buttonColor} onClick={handleAddToListClick}>
+          {buttonText}
+        </button>
+      </div>
     </div>
   );
 };

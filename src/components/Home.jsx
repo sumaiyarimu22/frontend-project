@@ -5,6 +5,8 @@ import User from "./User";
 
 const Home = () => {
   const [exercises, setExercises] = useState([]);
+  const [exerciseTime, setExerciseTime] = useState([]);
+
   useEffect(() => {
     fetch("data.json")
       .then((res) => res.json())
@@ -12,7 +14,11 @@ const Home = () => {
   }, []);
 
   const handlerAddToList = (data) => {
-    console.log(data.time_required);
+    if (exerciseTime) {
+      setExerciseTime([...exerciseTime, data]);
+    } else {
+      setExerciseTime([data]);
+    }
   };
 
   return (
@@ -31,7 +37,7 @@ const Home = () => {
         </div>
       </div>
       <div className="right-side">
-        <User />
+        <User exerciseTime={exerciseTime} />
       </div>
     </div>
   );
