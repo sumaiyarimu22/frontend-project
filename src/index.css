@@ -3,145 +3,38 @@
   margin: 0;
   box-sizing: border-box;
 }
-.home {
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-  gap: 1rem;
-  min-height: 100vh;
-  background-color: #816df010;
-}
-.left-side {
-  padding: 3rem 4rem;
-}
-.logo {
-  font-size: 1.6rem;
-  font-weight: bolder;
-  color: #816df0;
-}
-.title {
-  padding: 0.5rem 0;
-}
-.ecercises {
+
+.navbar {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 2rem;
-}
-.single-exercise-cart {
-  width: 16rem;
-  padding: 1rem;
-  background-color: white;
-  border-radius: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-.image {
-  border-radius: 0.8rem;
-  overflow: hidden;
-}
-.image img {
-  width: 100%;
-  height: 8rem;
-  object-fit: cover;
-}
-.exercise-desc {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.cart-title {
-  font-weight: bolder;
-}
-.cart-des {
-  color: gray;
-}
-.add-list-btn {
-  background-color: #816df0;
-  color: white;
-  border: 0;
-  padding: 0.6rem;
-  border-radius: 0.5rem;
-  width: 100%;
-}
-.added-color {
-  background-color: #5e9b58;
-  color: white;
-  border: 0;
-  padding: 0.6rem;
-  border-radius: 0.5rem;
-  width: 100%;
-}
-.activity-completed {
-  background-color: #816df0;
-  color: white;
-  border: 0;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  font-weight: bold;
-}
-.right-side {
-  background-color: white;
-}
-.user {
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  position: sticky;
-  top: 1rem;
-}
-.user-info {
-  display: flex;
-  gap: 0.8rem;
+  height: 5rem;
+  background-color: aliceblue;
   align-items: center;
+  padding: 0 3rem;
 }
-.user-info h4 {
-  font-weight: bolder;
-}
-.user-info small,
-.gray {
-  color: gray;
-}
-.user-img {
-  width: 2.5rem;
-  border-radius: 50%;
-  overflow: hidden;
-  height: 2.5rem;
-}
-.user-img img {
-  width: 100%;
-  object-fit: cover;
-  height: 100%;
-}
-.add-break-items {
+
+.menu-items {
   display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-  background-color: #816df010;
-  padding: 1rem 5px;
-  border-radius: 0.8rem;
+  gap: 1.5rem;
+}
+.menu-items li {
+  list-style: none;
 }
 .item {
-  background-color: white;
-  border-radius: 50%;
-  padding: 0.3rem;
+  text-decoration: none;
+  color: red;
+  font-size: 1.2rem;
 }
-.item-color-change {
-  background-color: #816df0;
-  border-radius: 50%;
-  padding: 0.3rem;
+.itemHover {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
 }
-.excrcise-details-area {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.excrcise-details,
-.break-details {
+.footer {
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
-  background-color: #816df010;
-  padding: 1rem 5px;
+  height: 5rem;
+  background-color: rgb(115, 166, 211);
+  align-items: center;
+  padding: 0 3rem;
 }
