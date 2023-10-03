@@ -2,32 +2,33 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="navbar">
-      <Link to="/" className="logo">
-        <h1>proReader</h1>
+    <div className="py-5 px-6 flex justify-between ">
+      <Link to="/" className="text-lg font-medium">
+        SMART HOME
       </Link>
-      <ul className="menu-items">
+      <ul className="flex gap-5">
         <li>
-          <NavLink
-            to="/home"
-            className={({ isActive }) => (isActive ? "itemHover" : "item")}
-          >
-            home
+          <NavLink to="/home" className="relative group px-2 font-medium">
+            <small className="tooltip">Home</small>
+            Home
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/books"
-            className={({ isActive }) => (isActive ? "itemHover" : "item")}
-          >
-            books
+          <NavLink to="/shop" className="relative group px-2 font-medium">
+            <small className="tooltip">shop</small>
+            shop
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/about"
-            className={({ isActive }) => (isActive ? "itemHover" : "item")}
-          >
+          <NavLink to="/cart" className="relative group px-2 font-medium">
+            <small className="tooltip">cart</small>
+            <small className="absolute -top-2 -right-1">0</small>
+            cart
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" className="relative group px-2 font-medium">
+            <small className="tooltip">about us</small>
             about us
           </NavLink>
         </li>

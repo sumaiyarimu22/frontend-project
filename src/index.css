@@ -1,40 +1,7 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  height: 5rem;
-  background-color: aliceblue;
-  align-items: center;
-  padding: 0 3rem;
-}
-
-.menu-items {
-  display: flex;
-  gap: 1.5rem;
-}
-.menu-items li {
-  list-style: none;
-}
-.item {
-  text-decoration: none;
-  color: red;
-  font-size: 1.2rem;
-}
-.itemHover {
-  text-decoration: none;
-  color: black;
-  font-size: 1.2rem;
-}
-.footer {
-  display: flex;
-  justify-content: space-between;
-  height: 5rem;
-  background-color: rgb(115, 166, 211);
-  align-items: center;
-  padding: 0 3rem;
+.tooltip {
+  @apply invisible absolute bg-transparent  left-8 top-7 group-hover:visible z-10 transition duration-300 ease-in-out bg-black px-1 py-[2px] text-white;
 }
