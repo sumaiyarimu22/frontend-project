@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="py-5 px-6 flex justify-between ">
+    <div className="py-5 px-6 flex justify-between h-20 items-center text-gray-900">
       <Link to="/" className="text-lg font-medium">
         SMART HOME
       </Link>
