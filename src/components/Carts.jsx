@@ -1,4 +1,4 @@
-import React from "react";
+
 
 import { Link } from "react-router-dom";
 
@@ -26,7 +26,7 @@ const Cart = () => {
               type="button"
               className="px-6 py-2 border rounded-full border-cyan-400"
             >
-              Back <span className="sr-only sm:not-sr-only">to shop</span>
+              Back <span className="sr-only sm:not-sr-only">to shop .</span>
             </button>
           </Link>
           <button
