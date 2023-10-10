@@ -1,4 +1,4 @@
-const Product = ({ product }) => {
+const Product = ({ product, handleAddToCart }) => {
   const { category, name, picture, price } = product;
   return (
     <div className='bg-gray-100 p-6 rounded shadow-lg'>
@@ -13,6 +13,7 @@ const Product = ({ product }) => {
       <button
         type='button'
         className='px-8 block w-full mt-4 py-3 font-semibold rounded-full bg-cyan-200 text-gray-800 hover:bg-cyan-400'
+        onClick={() => handleAddToCart(product)}
       >
         Add To Cart
       </button>
