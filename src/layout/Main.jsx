@@ -1,18 +1,22 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const ProductContext = createContext();
+export const CartContext = createContext();
 
 const Main = () => {
-  const products = useLoaderData();
+  const { products, initialCart } = useLoaderData();
+  const [cart, setCart] = useState(initialCart);
 
   return (
     <ProductContext.Provider value={products}>
-      <Navbar />
-      <Outlet />
-      <Footer />
+      <CartContext.Provider value={[cart, setCart]}>
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </CartContext.Provider>
     </ProductContext.Provider>
   );
 };
