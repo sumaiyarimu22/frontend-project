@@ -1,15 +1,11 @@
-const addToDb = (id) => {
+export const addTodb = (id) => {
   let shoppingCart = {};
 
-  shoppingCart[id] = 1;
-
-  //get the shopping cart from local storage
-  const storedCart = localStorage.getItem("shopping-cart");
-  if (storedCart) {
-    shoppingCart = JSON.parse(storedCart);
+  const localStroageData = localStorage.getItem("shopping-cart");
+  if (localStroageData) {
+    shoppingCart = JSON.parse(localStroageData);
   }
 
-  //add quantity
   const quantity = shoppingCart[id];
   if (quantity) {
     const newQuantity = quantity + 1;
@@ -21,17 +17,17 @@ const addToDb = (id) => {
   localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
 };
 
-//get data from the localStorage
-const getStoreCartData = () => {
-  let storeData = {};
-  //set products cart
-  const localStoreData = localStorage.getItem("shopping-cart");
-
-  if (localStoreData) {
-    storeData = JSON.parse(localStoreData);
+export const removeDb = (id) => {
+  const getData = localStorage.getItem("shopping-cart");
+  if (getData) {
+    const storeData = JSON.parse(getData);
+    if (id in storeData) {
+      delete storeData[id];
+      localStorage.setItem("shopping-cart", JSON.stringify(storeData));
+    }
   }
-
-  return storeData;
 };
 
-export { addToDb, getStoreCartData };
+export const deleteShoppingCart = () => {
+  localStorage.clear("shoppig-cart");
+};

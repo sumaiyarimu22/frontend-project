@@ -1,15 +1,32 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../layout/Main";
-import CartItem from "./CartItem";
+import CartItem from "../components/CartItem";
+import { deleteShoppingCart, removeDb } from "../utils/fackdb";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
-
-  let totalPrice = 0;
+  let total = 0;
   for (const product of cart) {
-    totalPrice = totalPrice + product.price * product.quantity;
+    total = total + product.price * product.quantity;
   }
+
+  const handleRemove = (id) => {
+    const existData = cart.filter((product) => product.id !== id);
+    setCart(existData);
+    removeDb(id);
+    toast.warning("Product Removed", { autoClose: 500 });
+  };
+
+  const handleplaceOrder = () => {
+    if (cart.length) {
+      setCart([]);
+      deleteShoppingCart();
+      return toast.success("order placed", { autoClose: 500 });
+    }
+    return toast.warning("cart is empty", { autoClose: 500 });
+  };
 
   return (
     <div className='flex min-h-screen items-start justify-center bg-gray-100 text-gray-900'>
@@ -18,13 +35,17 @@ const Cart = () => {
           {cart.length ? "Review Cart Items" : "Cart is EMPTY!"}
         </h2>
         <ul className='flex flex-col divide-y divide-gray-700'>
-          {cart.map((product) => (
-            <CartItem product={product} key={product.id} />
+          {cart.map((cartItem) => (
+            <CartItem
+              cartItem={cartItem}
+              key={cartItem.id}
+              handleRemove={handleRemove}
+            />
           ))}
         </ul>
         <div className='space-y-1 text-right'>
           <p>
-            Total amount: <span className='font-semibold'>{totalPrice}$</span>
+            Total amount: <span className='font-semibold'>{total}$</span>
           </p>
           <p className='text-sm text-gray-400'>
             Not including taxes and shipping costs
@@ -42,6 +63,7 @@ const Cart = () => {
           <button
             type='button'
             className='px-6 py-2 border font-semibold rounded-full hover:bg-cyan-400 bg-cyan-200 text-gray-800'
+            onClick={handleplaceOrder}
           >
             Place Order
           </button>

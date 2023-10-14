@@ -1,38 +1,33 @@
 import { useContext } from "react";
 import { CartContext, ProductContext } from "../layout/Main";
-import Product from "./Product";
-import { addToDb } from "../utils/fackdb";
+import Product from "../components/Product";
+import { addTodb } from "../utils/fackdb";
+import { toast } from "react-toastify";
 
 const Shop = () => {
-  const [cart, setCart] = useContext(CartContext);
   const products = useContext(ProductContext);
+  const [cart, setCart] = useContext(CartContext);
+  const addToCart = (product) => {
+    const isExist = cart.find((data) => data.id === product.id);
 
-  const handleAddToCart = (product) => {
-    const exist = cart.find((existProduct) => existProduct.id === product.id);
-
-    if (exist) {
-      const rest = cart.filter(
-        (existProduct) => existProduct.id !== product.id
-      );
-      exist.quantity = exist.quantity + 1;
-      setCart([...rest, product]);
+    if (isExist) {
+      const rest = cart.filter((data) => data.id !== product.id);
+      isExist.quantity = isExist.quantity + 1;
+      setCart([...rest, isExist]);
     } else {
       product.quantity = 1;
       setCart([...cart, product]);
     }
 
-    addToDb(product.id);
+    addTodb(product.id);
+    toast.success("Product added", { autoClose: 500 });
   };
 
   return (
     <div className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
       <div className='grid gap-8 row-gap-5 mb-8 lg:grid-cols-3 lg:row-gap-8'>
         {products.map((product) => (
-          <Product
-            product={product}
-            key={product.id}
-            handleAddToCart={handleAddToCart}
-          />
+          <Product product={product} key={product.id} addToCart={addToCart} />
         ))}
       </div>
     </div>

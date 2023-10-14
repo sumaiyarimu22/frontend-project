@@ -1,5 +1,5 @@
-const CartItem = ({ product }) => {
-  const { price, picture, name, quantity } = product;
+const CartItem = ({ cartItem, handleRemove }) => {
+  const { category, name, picture, price, quantity, id } = cartItem;
   return (
     <li className='flex flex-col py-6 sm:flex-row sm:justify-between'>
       <div className='flex w-full space-x-2 sm:space-x-4'>
@@ -19,12 +19,13 @@ const CartItem = ({ product }) => {
             <div className='text-right'>
               <p className='text-lg font-semibold'>{price}$</p>
               <p className='text-sm text-gray-600'>
-                Total:{price * quantity} $
+                Total:{quantity * price} $
               </p>
             </div>
           </div>
           <div className='flex text-sm divide-x'>
             <button
+              onClick={() => handleRemove(id)}
               type='button'
               className='flex items-center px-2 py-1 pl-0 space-x-1'
             >

@@ -7,8 +7,8 @@ export const ProductContext = createContext();
 export const CartContext = createContext();
 
 const Main = () => {
-  const { products, initialCart } = useLoaderData();
-  const [cart, setCart] = useState(initialCart);
+  const { products, initialProduct } = useLoaderData();
+  const [cart, setCart] = useState(initialProduct);
 
   return (
     <ProductContext.Provider value={products}>
