@@ -1,23 +1,23 @@
-import { Outlet, useLoaderData } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { createContext, useState } from "react";
+// import Footer from "../components/Footer";
 
-export const ProductContext = createContext();
-export const CartContext = createContext();
+export const DataProvider = createContext();
 
 const Main = () => {
-  const { products, initialProduct } = useLoaderData();
-  const [cart, setCart] = useState(initialProduct);
+  const [formData, setFormData] = useState([]);
+
+  const updateFormData = (data) => {
+    setFormData([...formData, data]);
+  };
 
   return (
-    <ProductContext.Provider value={products}>
-      <CartContext.Provider value={[cart, setCart]}>
-        <Navbar />
-        <Outlet />
-        <Footer />
-      </CartContext.Provider>
-    </ProductContext.Provider>
+    <DataProvider.Provider value={{ formData, updateFormData }}>
+      <Navbar />
+      <Outlet />
+      {/* <Footer /> */}
+    </DataProvider.Provider>
   );
 };
 
