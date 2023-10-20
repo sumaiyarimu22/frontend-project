@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { DataProvider } from "../layout/Main";
 import { useContext } from "react";
+import addtodb from "../utils/db";
 
 const FORM_INFO = {
   name: "",
@@ -12,12 +13,23 @@ const FORM_INFO = {
   skills: [],
   agree: false,
   group: "",
+  id: 0,
 };
 
 const Home = () => {
   const [input, setInput] = useState({ ...FORM_INFO });
-  const { name, email, country, bio, birthday, gender, skills, agree, group } =
-    input;
+  const {
+    name,
+    email,
+    country,
+    bio,
+    birthday,
+    gender,
+    skills,
+    agree,
+    group,
+    id,
+  } = input;
   const { updateFormData } = useContext(DataProvider);
 
   const handleOnChange = (e) => {
@@ -32,8 +44,10 @@ const Home = () => {
     e.preventDefault();
     setInput({
       ...input,
+      id: Math.random(100),
     });
     updateFormData(input);
+    addtodb(input);
   };
 
   const handleSkillChange = (e) => {
