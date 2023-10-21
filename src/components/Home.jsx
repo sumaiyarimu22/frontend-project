@@ -48,6 +48,7 @@ const Home = () => {
     });
     updateFormData(input);
     addtodb(input);
+    setInput(FORM_INFO);
   };
 
   const handleSkillChange = (e) => {
