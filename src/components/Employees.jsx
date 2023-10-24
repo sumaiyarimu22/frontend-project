@@ -25,7 +25,13 @@ const Employees = () => {
           />
         </div>
       )}
-      {isAdding && <AddForm />}
+      {isAdding && (
+        <AddForm
+          setIsAdding={setIsAdding}
+          employees={employees}
+          setEmployees={setEmployees}
+        />
+      )}
       {isEditing && <EditForm />}
     </div>
   );

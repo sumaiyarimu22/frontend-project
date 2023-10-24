@@ -22,9 +22,7 @@ const EditForm = () => {
           <button type='submit' className='add-btn'>
             Update
           </button>
-          <button type='reset' className='cancle-btn'>
-            cancle
-          </button>
+          <button className='cancle-btn'>cancle</button>
         </div>
       </form>
     </div>
