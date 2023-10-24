@@ -18,8 +18,8 @@ const TableRow = ({ employee, index, handleDelete, handleEdit }) => {
       <td>{date}</td>
       <td>
         <div className='user-btn'>
-          <button onClick={""}>Edit</button>
-          <button>Delete</button>
+          <button onClick={() => handleEdit(id)}>Edit</button>
+          <button onClick={() => handleDelete(id)}>Delete</button>
         </div>
       </td>
     </tr>
